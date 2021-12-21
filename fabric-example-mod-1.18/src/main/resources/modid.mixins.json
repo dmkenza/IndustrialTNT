@@ -4,9 +4,11 @@
   "package": "com.kenza.tnt.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "TntBlockMixin",
+    "TntEntityMixin"
   ],
   "client": [
-    "ExampleMixin"
+    "TntEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
