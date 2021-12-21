@@ -36,5 +36,15 @@
       <option name="name" value="modmenu" />
       <option name="url" value="https://maven.terraformersmc.com/releases" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="minelp" />
+      <option name="name" value="minelp" />
+      <option name="url" value="https://repo.minelittlepony-mod.com/maven/snapshot" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="minelp-release" />
+      <option name="name" value="minelp-release" />
+      <option name="url" value="https://repo.minelittlepony-mod.com/maven/release" />
+    </remote-repository>
   </component>
 </project>
