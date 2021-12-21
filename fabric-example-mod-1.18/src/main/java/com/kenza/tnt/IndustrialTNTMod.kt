@@ -7,8 +7,10 @@ class IndustrialTNTMod : ModInitializer {
 
 
     override fun onInitialize() {
-        LOGGER.info("Hello Fabric world!")
+        debug("Hello Fabric world!")
         openLastWorldOnInit()
+        Blocks.registerAll()
+        debug("x")
 
     }
 
@@ -17,10 +19,7 @@ class IndustrialTNTMod : ModInitializer {
         // It is considered best practice to use your mod id as the logger's name.
         // That way, it's clear which mod wrote info, warnings, and errors.
         @JvmField
-        val LOGGER = LogManager.getLogger("modid")
+        val LOGGER = LogManager.getLogger(MOD_ID)
     }
 }
 
-fun Any.debug(msg: String) {
-    IndustrialTNTMod.LOGGER.debug(msg)
-}

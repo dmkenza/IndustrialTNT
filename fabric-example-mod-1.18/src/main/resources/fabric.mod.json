@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "tnt",
   "version": "${version}",
 
   "name": "Example Mod",
@@ -14,12 +14,12 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/tnt/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "IndustrialTNTMod"
+      "com.kenza.tnt.IndustrialTNTMod"
     ],
     "modmenu": []
   },
@@ -29,6 +29,7 @@
   "depends": {
     "fabricloader": ">=0.12.0",
     "java": ">=16",
+    "fabric-language-kotlin": ">=1.6.0",
     "fabric-api-base": ">=0.1.0",
     "fabric-events-lifecycle-v0": ">=0.1.0",
     "fabric-keybindings-v0": ">=0.1.0",
