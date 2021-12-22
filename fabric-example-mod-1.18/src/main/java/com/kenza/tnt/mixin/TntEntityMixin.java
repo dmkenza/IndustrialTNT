@@ -9,6 +9,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.TntEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.world.World;
+import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,10 +27,6 @@ public abstract class TntEntityMixin extends Entity implements  TntEntityExt {
         super(type, world);
     }
 
-    @Override
-    public void test() {
-
-    }
 
     @NotNull
     @Override
@@ -44,14 +41,12 @@ public abstract class TntEntityMixin extends Entity implements  TntEntityExt {
 
     @Inject(method = "explode", at = @At("HEAD"), cancellable = true)
     private void onExplode(CallbackInfo ci) {
-        TntEntity self = (TntEntity) (Object) this;
-
-//		if (isDirty) {
-//			DirtTntEntity.createDirtExplosion(self, self.world);
-//			ci.cancel();
-//		}
+		if (getTntType() == TntType.Industrial) {
+            float power = 5.0F;
+            this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(), power, Explosion.DestructionType.BREAK);
+            ci.cancel();
+		}
     }
-
 
     @Inject(method = "initDataTracker", at = @At("TAIL"))
     protected void initDataTracker(CallbackInfo ci) {

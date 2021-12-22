@@ -23,7 +23,6 @@ data class TntEntityPropertyData(
 
 
 interface TntEntityExt : TNTAttribute {
-    fun test()
 }
 
 class TntEntityExtImpl(val entity: Entity): TntEntityExt{
@@ -89,8 +88,5 @@ class TntEntityExtImpl(val entity: Entity): TntEntityExt{
 
         val TNT_ENTITY_PROPERTY_TRACKER = DataTracker.registerData(VillagerEntity::class.java, TNT_ENTITY_EXTRA_DATA)
     }
-
-    override fun test() {
-    }
-
+    
 }

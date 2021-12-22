@@ -1,9 +1,16 @@
 package com.kenza.tnt
 
+import com.kenza.tnt.block.Blocks
 import net.fabricmc.api.ModInitializer
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
-import net.minecraft.client.render.entity.EntityRendererFactory
-import net.minecraft.client.render.entity.TntEntityRenderer
+import net.minecraft.block.entity.BlockEntity
+import net.minecraft.entity.Entity
+import net.minecraft.item.ItemStack
+import net.minecraft.item.ToolItem
+import net.minecraft.item.ToolMaterial
+import net.minecraft.loot.context.LootContext
+import net.minecraft.loot.context.LootContextParameters
+import net.minecraft.server.world.ServerWorld
+import net.minecraft.util.math.Vec3d
 import org.apache.logging.log4j.LogManager
 
 class IndustrialTNTMod : ModInitializer {
@@ -15,7 +22,6 @@ class IndustrialTNTMod : ModInitializer {
         Blocks.registerAll()
         debug("x")
 
-//        TntBlock
 
     }
 

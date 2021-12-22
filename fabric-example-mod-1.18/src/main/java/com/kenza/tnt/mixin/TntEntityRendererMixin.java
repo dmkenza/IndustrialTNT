@@ -1,18 +1,16 @@
 package com.kenza.tnt.mixin;
 
-import com.kenza.tnt.Blocks;
+import com.kenza.tnt.block.Blocks;
 import com.kenza.tnt.domain.TNTAttribute;
 import com.kenza.tnt.domain.TntType;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.TntEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.TntEntity;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
