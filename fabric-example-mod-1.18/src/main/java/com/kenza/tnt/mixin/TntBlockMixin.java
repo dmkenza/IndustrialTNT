@@ -51,20 +51,17 @@ public abstract class TntBlockMixin implements TNTAttribute {
     }
 
     //
-//    @Inject(method = "onDestroyedByExplosion", at = @At("HEAD"), cancellable = true)
-//    public void onDestroyedByExplosion(World world, BlockPos pos, Explosion explosion, CallbackInfo ci) {
-////        if (world.isClient) {
-////            return;
-////        }
-//
-//        Block block = world.getBlockState(pos).getBlock();
-//        if (block instanceof TNTAttribute) {
-//            TntType type = ((TNTAttribute) block).getTntType();
-//
-//            TntEntity tntEntity = Blocks.INSTANCE.getTNTEntityByType(type, world, pos, null);
-//            tntEntity.setFuse((short) (world.random.nextInt(tntEntity.getFuse() / 4) + tntEntity.getFuse() / 8));
-//            world.spawnEntity(tntEntity);
-//            ci.cancel();
-//        }
-//    }
+    @Inject(method = "onDestroyedByExplosion", at = @At("HEAD"), cancellable = true)
+    public void onDestroyedByExplosion(World world, BlockPos pos, Explosion explosion, CallbackInfo ci) {
+        if (world.isClient) {
+            return;
+        }
+
+        TntType type = getTntType();
+
+        TntEntity tntEntity = Blocks.INSTANCE.getTNTEntityByType(type, world, pos, null);
+        tntEntity.setFuse((short) (world.random.nextInt(tntEntity.getFuse() / 4) + tntEntity.getFuse() / 8));
+        world.spawnEntity(tntEntity);
+        ci.cancel();
+    }
 }
