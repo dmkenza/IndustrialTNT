@@ -18,7 +18,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** Allow TNT renderer to be dirty */
 @Environment(EnvType.CLIENT)
 @Mixin(TntEntityRenderer.class)
 public abstract class TntEntityRendererMixin {

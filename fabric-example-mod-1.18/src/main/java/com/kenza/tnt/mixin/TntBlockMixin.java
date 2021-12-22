@@ -20,7 +20,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** Allow TNT blocks to be dirty */
 @Mixin(TntBlock.class)
 public abstract class TntBlockMixin implements TNTAttribute {
 
