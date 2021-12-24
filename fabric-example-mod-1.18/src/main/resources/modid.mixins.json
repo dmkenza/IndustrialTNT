@@ -4,6 +4,9 @@
   "package": "com.kenza.tnt.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "ExplosionDecayLootFunctionMixin",
+    "ExplosionMixin",
+    "SurvivesExplosionLootConditionMixin",
     "TntBlockMixin",
     "TntEntityMixin"
   ],

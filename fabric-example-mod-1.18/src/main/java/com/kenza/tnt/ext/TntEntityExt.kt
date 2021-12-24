@@ -23,6 +23,7 @@ data class TntEntityPropertyData(
 
 
 interface TntEntityExt : TNTAttribute {
+
 }
 
 class TntEntityExtImpl(val entity: Entity): TntEntityExt{

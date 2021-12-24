@@ -1,12 +1,10 @@
-package com.kenza.tnt
+package com.kenza.tnt.utils
 
 import com.minelittlepony.common.event.ScreenInitCallback
 import net.minecraft.client.MinecraftClient
-import net.minecraft.client.gui.screen.OpenToLanScreen
 import net.minecraft.client.gui.screen.SaveLevelScreen
 import net.minecraft.client.gui.screen.Screen
 import net.minecraft.client.gui.screen.TitleScreen
-import net.minecraft.client.gui.screen.world.CreateWorldScreen
 import net.minecraft.client.sound.PositionedSoundInstance
 import net.minecraft.sound.SoundEvents
 import net.minecraft.text.TranslatableText
