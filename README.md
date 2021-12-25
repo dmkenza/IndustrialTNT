@@ -1,9 +1,1 @@
-# Fabric Example Mod
-
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+ Add IndustrialTNT like from old IC2 mod which keeps items after explosion and helps to mine resources. Also this TNT can be enchanted with Fortune.
