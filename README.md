@@ -2,8 +2,6 @@
 
 This is a minecraft mod for Fabric.
 
-<h3 align="center">IndustrialTNT</h3>
-<p align="center">An IndustrialTNT mod made for Fabric.</p>
 <p align="center">
   <a title="Fabric API" href="https://github.com/FabricMC/fabric">
     <img src="https://i.imgur.com/Ol1Tcf8.png" width="151" height="50" />
