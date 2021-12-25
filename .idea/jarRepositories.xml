@@ -12,14 +12,14 @@
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="UserLocalRemappedMods" />
+      <option name="name" value="UserLocalRemappedMods" />
+      <option name="url" value="file:/$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="MavenRepo" />
       <option name="name" value="MavenRepo" />
       <option name="url" value="https://repo.maven.apache.org/maven2/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="UserLocalRemappedMods" />
-      <option name="name" value="UserLocalRemappedMods" />
-      <option name="url" value="file:/$PROJECT_DIR$/fabric-example-mod-1.18/.gradle/loom-cache/remapped_mods/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="Fabric" />
@@ -37,19 +37,14 @@
       <option name="url" value="https://maven.terraformersmc.com/releases" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="minelp" />
-      <option name="name" value="minelp" />
-      <option name="url" value="https://repo.minelittlepony-mod.com/maven/snapshot" />
+      <option name="id" value="Siphalor's Maven" />
+      <option name="name" value="Siphalor's Maven" />
+      <option name="url" value="https://maven.siphalor.de/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="minelp-release" />
       <option name="name" value="minelp-release" />
       <option name="url" value="https://repo.minelittlepony-mod.com/maven/release" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="Siphalor's Maven" />
-      <option name="name" value="Siphalor's Maven" />
-      <option name="url" value="https://maven.siphalor.de/" />
     </remote-repository>
   </component>
 </project>
