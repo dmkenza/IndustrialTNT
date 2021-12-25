@@ -2,6 +2,24 @@
 
 This is a minecraft mod for Fabric.
 
+<p align="center"><img src="https://i.imgur.com/1ZwHaAt.png"></p>
+<h3 align="center">IndustrialTNT</h3>
+<p align="center">An IndustrialTNT mod made for Fabric.</p>
+<p align="center">
+  <a title="Fabric API" href="https://github.com/FabricMC/fabric">
+    <img src="https://i.imgur.com/Ol1Tcf8.png" width="151" height="50" />
+  </a>
+  <a title="Fabric Language Kotlin" href="https://github.com/FabricMC/fabric-language-kotlin" target="_blank" rel="noopener noreferrer">
+    <img src="https://i.imgur.com/c1DH9VL.png" width="171" height="50" />
+  </a>
+</p>
+<p align="center">
+  <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg"></a>
+    <a href="https://www.curseforge.com/minecraft/mc-mods/industrial-revolution"><img src="http://cf.way2muchnoise.eu/versions/391708_latest.svg"></a>
+  <a href="https://www.curseforge.com/minecraft/mc-mods/industrial-revolution"><img src="http://cf.way2muchnoise.eu/391708.svg"></a>
+</p>
+
+
 Add IndustrialTNT like from old IC2 mod which keeps items after explosion and helps to mine resources. 
 
 ![r1](https://user-images.githubusercontent.com/66675746/147386702-17fdf29c-113b-4a21-a44e-60a7a5c12f39.png)
