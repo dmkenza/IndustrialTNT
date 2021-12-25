@@ -3,8 +3,8 @@
   "id": "tnt",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "IndustrialTNT",
+  "description": "Add IndustrialTNT like from old IC2 mod which keeps items after explosion and helps to mine resources. Also this TNT can be enchanted with Fortune.",
   "authors": [
     "DmitryKenza"
   ],

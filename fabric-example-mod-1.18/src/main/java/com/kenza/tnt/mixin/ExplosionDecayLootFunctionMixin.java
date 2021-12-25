@@ -19,15 +19,16 @@ public class ExplosionDecayLootFunctionMixin {
 
     @Inject(method = "process(Lnet/minecraft/item/ItemStack;Lnet/minecraft/loot/context/LootContext;)Lnet/minecraft/item/ItemStack;", at = @At("HEAD"), cancellable = true)
     public void process(ItemStack stack, LootContext context, CallbackInfoReturnable<ItemStack> cir) {
+        try{
+            Entity thisEntity = context.requireParameter(LootContextParameters.THIS_ENTITY);
 
-        Entity thisEntity = context.requireParameter(LootContextParameters.THIS_ENTITY);
-
-        if(thisEntity instanceof TNTAttribute){
-            if(((TNTAttribute) thisEntity).getTntType() == TntType.Industrial){
-                cir.setReturnValue(stack);
-                cir.cancel();
+            if(thisEntity instanceof TNTAttribute){
+                if(((TNTAttribute) thisEntity).getTntType() == TntType.Industrial){
+                    cir.setReturnValue(stack);
+                    cir.cancel();
+                }
             }
-        }
+        }catch (Exception e){}
 
     }
 }
