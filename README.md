@@ -1,6 +1,5 @@
 # IndustrialTNT
 
-This is a minecraft mod for Fabric.
 
 <p align="left">
   <a title="Fabric API" href="https://github.com/FabricMC/fabric">
@@ -10,7 +9,7 @@ This is a minecraft mod for Fabric.
     <img src="https://i.imgur.com/c1DH9VL.png" width="171" height="50" />
   </a>
 </p>
-<p align="center">
+<p align="left">
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg"></a>
     <a href="https://www.curseforge.com/minecraft/mc-mods/industrial-revolution"><img src="http://cf.way2muchnoise.eu/versions/391708_latest.svg"></a>
   <a href="https://www.curseforge.com/minecraft/mc-mods/industrial-revolution"><img src="http://cf.way2muchnoise.eu/391708.svg"></a>
