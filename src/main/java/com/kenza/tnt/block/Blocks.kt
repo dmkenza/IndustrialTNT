@@ -2,17 +2,24 @@ package com.kenza.tnt.block
 
 import com.kenza.tnt.INDUSTRIAL_TNT_BLOCk_ID
 import com.kenza.tnt.MOD_ID
+import com.kenza.tnt.debug
 import com.kenza.tnt.domain.FortuneAttribute
 import com.kenza.tnt.domain.TNTAttribute
 import com.kenza.tnt.domain.TntType
+import com.kenza.tnt.utils.isRenderThread
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.block.*
 import net.minecraft.block.Blocks
+import net.minecraft.client.MinecraftClient
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.TntEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
+import net.minecraft.server.MinecraftServer
 import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
@@ -21,16 +28,25 @@ import net.minecraft.world.World
 
 object Blocks {
 
-    private lateinit var INDUSTRIAL_TNT_BLOCK: Block
+
+
+    @JvmStatic
+    val INDUSTRIAL_TNT_BLOCK = registerBlock(
+        INDUSTRIAL_TNT_BLOCk_ID, TntBlock(
+            FabricBlockSettings.of(Material.TNT).sounds(BlockSoundGroup.GRASS)
+        ).apply {
+            val block = this
+            (block as TNTAttribute).tntType = TntType.Industrial
+        }
+    )
+
+    fun clientTest() {
+
+    }
+
 
     fun registerAll() {
-        INDUSTRIAL_TNT_BLOCK = registerBlock(
-            INDUSTRIAL_TNT_BLOCk_ID, TntBlock(
-                FabricBlockSettings.of(Material.TNT).sounds(BlockSoundGroup.GRASS)
-            ).apply {
-                (this as TNTAttribute).tntType = TntType.Industrial
-            }
-        )
+
     }
 
     fun getTNTBlockByType(type: TntType?): BlockState {
@@ -71,7 +87,7 @@ object Blocks {
 
     private fun registerBlockItem(name: String, block: Block): Item? {
         return Registry.register(
-            Registry.ITEM, Identifier(MOD_ID, name), TntItem(block, FabricItemSettings().group(ItemGroup.MISC))
+            Registry.ITEM, Identifier(MOD_ID, name), TntItem(block, FabricItemSettings().group(ItemGroup.REDSTONE))
         )
     }
 

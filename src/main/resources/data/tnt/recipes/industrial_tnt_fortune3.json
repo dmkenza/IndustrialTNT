@@ -21,7 +21,7 @@
         "data": {
           "$": "$ i1",
           "some_custom_tag": true,
-          "Damage": "$ i1.Damage + 120"
+          "Damage": "$ i1.Damage + 40"
         }
       }
     }

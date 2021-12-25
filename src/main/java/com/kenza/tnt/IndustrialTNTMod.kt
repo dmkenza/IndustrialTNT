@@ -31,49 +31,67 @@ import net.minecraft.util.math.Vec3d
 import org.apache.logging.log4j.LogManager
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.UseSerializers
+import net.fabricmc.api.ClientModInitializer
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientEntityEvents
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents
+import net.minecraft.client.MinecraftClient
 import net.minecraft.nbt.StringNbtReader
+import net.minecraft.network.ClientConnection
 import net.minecraft.network.PacketByteBuf
+import org.spongepowered.asm.mixin.Mixin
 
 class IndustrialTNTMod : ModInitializer {
 
 
+
     override fun onInitialize() {
-        debug("Hello Fabric world!")
-        openLastWorldOnInit()
+//        openLastWorldOnInit()
+
+
         Blocks.registerAll()
 
 
-        ServerPlayConnectionEvents.INIT.register(object : ServerPlayConnectionEvents.Init {
-            override fun onPlayInit(handler: ServerPlayNetworkHandler, server: MinecraftServer) {
+        debug("xx")
+//        GlobalScope.launch {
+//            try {
+//                delay(100)
+//            }catch (e : Exception){
+//                e.printStackTrace()
+//            }
+//        }
 
 
-                GlobalScope.launch {
-                    delay(3000)
-                    val x = handler.player.mainHandStack
-
-
-                    val y1 = "{Count:1b,Slot:1b,id:\"minecraft:diamond_pickaxe\",tag:{Damage:3,Enchantments:[{id:\"minecraft:efficiency\",lvl:3s},{id:\"minecraft:unbreaking\",lvl:3s},{id:\"minecraft:fortune\",lvl:2s}]}}"
-
-                    val t1 = "{Damage:3,Enchantments:[{id:\"minecraft:efficiency\",lvl:3s},{id:\"minecraft:unbreaking\",lvl:3s},{id:\"minecraft:fortune\",lvl:2s}]}"
-                    try {
-
-                    val nbt1 = x.toString()
+//        ServerPlayConnectionEvents.INIT.register(object : ServerPlayConnectionEvents.Init {
+//            override fun onPlayInit(handler: ServerPlayNetworkHandler, server: MinecraftServer) {
 //
-//                    var x2 = StringNbtReader.parse(t1)
-//                    var x3 = StringNbtReader.parse(nbt1)
-
-
-//                        val json = Json.encodeToString(nbt)
-//                        val t1 = Json.decodeFromString<NbtCompound>(json)
-                        debug("x" + nbt1)
-                    }catch (e: Exception){
-                        debug("ss" + e)
-                    }
-
-                }
-            }
-
-        })
+//
+//                GlobalScope.launch {
+//                    delay(3000)
+//                    val x = handler.player.mainHandStack
+//
+//
+//                    val y1 = "{Count:1b,Slot:1b,id:\"minecraft:diamond_pickaxe\",tag:{Damage:3,Enchantments:[{id:\"minecraft:efficiency\",lvl:3s},{id:\"minecraft:unbreaking\",lvl:3s},{id:\"minecraft:fortune\",lvl:2s}]}}"
+//
+//                    val t1 = "{Damage:3,Enchantments:[{id:\"minecraft:efficiency\",lvl:3s},{id:\"minecraft:unbreaking\",lvl:3s},{id:\"minecraft:fortune\",lvl:2s}]}"
+//                    try {
+//
+//                    val nbt1 = x.toString()
+////
+////                    var x2 = StringNbtReader.parse(t1)
+////                    var x3 = StringNbtReader.parse(nbt1)
+//
+//
+////                        val json = Json.encodeToString(nbt)
+////                        val t1 = Json.decodeFromString<NbtCompound>(json)
+//                        debug("x" + nbt1)
+//                    }catch (e: Exception){
+//                        debug("ss" + e)
+//                    }
+//
+//                }
+//            }
+//
+//        })
 
 
     }

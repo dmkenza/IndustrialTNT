@@ -6,9 +6,9 @@ import net.minecraft.nbt.NbtCompound
 import net.minecraft.nbt.NbtList
 
 fun NbtCompound.getFortuneEnchantment() : Int {
-    return (this[ENCHANTMENT_KEY] as NbtList).asSequence().mapNotNull {
+    return (this[ENCHANTMENT_KEY] as? NbtList)?.asSequence()?.mapNotNull {
         it as? NbtCompound
-    }.firstOrNull {
+    }?.firstOrNull {
           it[ENCHANTMENT_ID_KEY].toString() == ENCHANTMENT_FORTUNE_ID
     }?.let { enchantment ->
         return@let(enchantment[ENCHANTMENT_LVL_KEY] as? NbtByte)?.intValue()

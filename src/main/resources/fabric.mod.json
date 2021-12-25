@@ -2,24 +2,28 @@
   "schemaVersion": 1,
   "id": "tnt",
   "version": "${version}",
-
-  "name": "IndustrialTNT",
-  "description": "Add IndustrialTNT like from old IC2 mod which keeps items after explosion and helps to mine resources. Also this TNT can be enchanted with Fortune.",
+  "name": "Kenza's IndustrialTNT",
+  "description": "Add IndustrialTNT like from old IC2 mod.",
   "authors": [
     "DmitryKenza"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/dmkenza/IndustrialTNT",
+    "issues": "https://github.com/dmkenza/IndustrialTNT/issues"
   },
-
   "license": "CC0-1.0",
   "icon": "assets/tnt/icon.png",
-
   "environment": "*",
   "entrypoints": {
+
+    "server": [
+    ],
+    "client": [],
     "main": [
-      "com.kenza.tnt.IndustrialTNTMod"
+      {
+        "adapter": "kotlin",
+        "value": "com.kenza.tnt.IndustrialTNTMod"
+      }
     ],
     "modmenu": []
   },
@@ -38,5 +42,4 @@
   "suggests": {
     "modmenu": "*"
   }
-
 }

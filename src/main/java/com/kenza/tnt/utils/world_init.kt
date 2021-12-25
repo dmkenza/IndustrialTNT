@@ -1,5 +1,6 @@
 package com.kenza.tnt.utils
 
+import com.kenza.tnt.block.Blocks
 import com.minelittlepony.common.event.ScreenInitCallback
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.screen.SaveLevelScreen
@@ -28,6 +29,8 @@ private fun onScreenInit(screen: Screen?, buttons: ScreenInitCallback.ButtonList
         //open world after start minecraft
         initTitleCounter++
         if (initTitleCounter == 2) {
+
+
             val client = MinecraftClient.getInstance()
             client.levelStorage.levelList.firstOrNull()?.let { level ->
                 client.soundManager.play(PositionedSoundInstance.master(SoundEvents.UI_BUTTON_CLICK, 1.0f))

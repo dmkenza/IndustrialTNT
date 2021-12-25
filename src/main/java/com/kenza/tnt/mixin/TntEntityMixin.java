@@ -53,7 +53,7 @@ public abstract class TntEntityMixin extends Entity implements TntEntityExt, For
     @Inject(method = "explode", at = @At("HEAD"), cancellable = true)
     private void onExplode(CallbackInfo ci) {
         if (getTntType() == TntType.Industrial) {
-            float power = 5.0F;
+            float power = 4.5F;
             this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(), power, Explosion.DestructionType.BREAK);
             ci.cancel();
         }
