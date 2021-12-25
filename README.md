@@ -1,6 +1,6 @@
 # IndustrialTNT
 
-This is minecraft mod for Fabric.
+This is a minecraft mod for Fabric.
 
 Add IndustrialTNT like from old IC2 mod which keeps items after explosion and helps to mine resources. 
 
