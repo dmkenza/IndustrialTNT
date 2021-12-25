@@ -1,5 +1,8 @@
 {
   "variants": {
-    "": { "model": "tnt:block/industrial_tnt0" }
+    "fortune=0": { "model": "tnt:block/industrial_tnt0" },
+    "fortune=1": { "model": "tnt:block/industrial_tnt0" },
+    "fortune=2": { "model": "tnt:block/industrial_tnt0" },
+    "fortune=3": { "model": "tnt:block/industrial_tnt0" }
   }
 }

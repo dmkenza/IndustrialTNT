@@ -46,5 +46,10 @@
       <option name="name" value="minelp-release" />
       <option name="url" value="https://repo.minelittlepony-mod.com/maven/release" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="Siphalor's Maven" />
+      <option name="name" value="Siphalor's Maven" />
+      <option name="url" value="https://maven.siphalor.de/" />
+    </remote-repository>
   </component>
 </project>

@@ -1,5 +1,6 @@
 package com.kenza.tnt.ext
 
+import com.kenza.tnt.domain.FortuneAttribute
 import com.kenza.tnt.domain.TNTAttribute
 import com.kenza.tnt.domain.TntType
 import drawer.getFrom
@@ -17,12 +18,13 @@ import net.minecraft.network.PacketByteBuf
 
 @Serializable
 data class TntEntityPropertyData(
-    val tntType : TntType = TntType.Default
+    val tntType : TntType = TntType.Default,
+    val fortuneLevel : Int = 0
 )
 
 
 
-interface TntEntityExt : TNTAttribute {
+interface TntEntityExt : TNTAttribute, FortuneAttribute {
 
 }
 
@@ -39,6 +41,11 @@ class TntEntityExtImpl(val entity: Entity): TntEntityExt{
         get() = propertyData.tntType
         set(value) {
             propertyData = propertyData.copy(tntType = value)
+        }
+    override var fortuneLevel: Int
+        get() = propertyData.fortuneLevel
+        set(value) {
+            propertyData = propertyData.copy(fortuneLevel = value)
         }
 
 

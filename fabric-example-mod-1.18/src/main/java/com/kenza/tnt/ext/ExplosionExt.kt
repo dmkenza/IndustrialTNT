@@ -1,5 +1,6 @@
 package com.kenza.tnt.ext
 
+import com.kenza.tnt.domain.FortuneAttribute
 import com.kenza.tnt.domain.TNTAttribute
 import com.kenza.tnt.domain.TntType
 import com.kenza.tnt.domain.TntType.*
@@ -30,12 +31,13 @@ class ExplosionExtImpl() {
 
                 }
                 Industrial -> {
-                    builder.parameter(LootContextParameters.EXPLOSION_RADIUS, power)
-                    builder.parameter(LootContextParameters.TOOL, getDiamondPickaxeItemStack(3))
+                    (entity as? FortuneAttribute)?.let {
+//                        builder.parameter(LootContextParameters.EXPLOSION_RADIUS, power)
+                        builder.parameter(LootContextParameters.TOOL, getDiamondPickaxeItemStack(it.fortuneLevel))
+                    }
+
                 }
             }
-
-
         }
         return builder
     }

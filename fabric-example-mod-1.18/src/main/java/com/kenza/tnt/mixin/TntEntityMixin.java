@@ -1,5 +1,6 @@
 package com.kenza.tnt.mixin;
 
+import com.kenza.tnt.domain.FortuneAttribute;
 import com.kenza.tnt.domain.TNTAttribute;
 import com.kenza.tnt.domain.TntType;
 import com.kenza.tnt.ext.TntEntityExt;
@@ -17,8 +18,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(TntEntity.class)
-public abstract class TntEntityMixin extends Entity implements  TntEntityExt {
-
+public abstract class TntEntityMixin extends Entity implements TntEntityExt, FortuneAttribute {
 
 
     protected TntEntityExtImpl tntEntityExt;
@@ -39,13 +39,24 @@ public abstract class TntEntityMixin extends Entity implements  TntEntityExt {
         tntEntityExt.setTntType(tntType);
     }
 
+
+    @Override
+    public void setFortuneLevel(int level) {
+        tntEntityExt.setFortuneLevel(level);
+    }
+
+    @Override
+    public int getFortuneLevel() {
+        return tntEntityExt.getFortuneLevel();
+    }
+
     @Inject(method = "explode", at = @At("HEAD"), cancellable = true)
     private void onExplode(CallbackInfo ci) {
-		if (getTntType() == TntType.Industrial) {
+        if (getTntType() == TntType.Industrial) {
             float power = 5.0F;
             this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(), power, Explosion.DestructionType.BREAK);
             ci.cancel();
-		}
+        }
     }
 
     @Inject(method = "initDataTracker", at = @At("TAIL"))

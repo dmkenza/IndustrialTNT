@@ -58,14 +58,14 @@ class IndustrialTNTMod : ModInitializer {
                     try {
 
                     val nbt1 = x.toString()
-
-                    var x2 = StringNbtReader.parse(t1)
-                    var x3 = StringNbtReader.parse(nbt1)
+//
+//                    var x2 = StringNbtReader.parse(t1)
+//                    var x3 = StringNbtReader.parse(nbt1)
 
 
 //                        val json = Json.encodeToString(nbt)
 //                        val t1 = Json.decodeFromString<NbtCompound>(json)
-                        debug("x" + x2 + x3 + nbt1)
+                        debug("x" + nbt1)
                     }catch (e: Exception){
                         debug("ss" + e)
                     }

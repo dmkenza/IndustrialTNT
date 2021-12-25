@@ -26,6 +26,10 @@ repositories {
 		name = 'minelp-release'
 		url = 'https://repo.minelittlepony-mod.com/maven/release'
 	}
+	maven {
+		name = "Siphalor's Maven"
+		url = "https://maven.siphalor.de/"
+	}
 }
 
 dependencies {
@@ -46,6 +50,9 @@ dependencies {
 
 	modApi "com.minelittlepony:kirin:${project.kirin_version}"
 	include "com.minelittlepony:kirin:${project.kirin_version}"
+
+	modApi "de.siphalor:nbtcrafting-1.17:+"
+	include "de.siphalor:nbtcrafting-1.17:+"
 }
 
 processResources {

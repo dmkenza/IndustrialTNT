@@ -2,6 +2,7 @@ package com.kenza.tnt.block
 
 import com.kenza.tnt.INDUSTRIAL_TNT_BLOCk_ID
 import com.kenza.tnt.MOD_ID
+import com.kenza.tnt.domain.FortuneAttribute
 import com.kenza.tnt.domain.TNTAttribute
 import com.kenza.tnt.domain.TntType
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
@@ -25,7 +26,7 @@ object Blocks {
     fun registerAll() {
         INDUSTRIAL_TNT_BLOCK = registerBlock(
             INDUSTRIAL_TNT_BLOCk_ID, TntBlock(
-                FabricBlockSettings.of(Material.TNT).breakInstantly().sounds(BlockSoundGroup.GRASS)
+                FabricBlockSettings.of(Material.TNT).sounds(BlockSoundGroup.GRASS)
             ).apply {
                 (this as TNTAttribute).tntType = TntType.Industrial
             }
@@ -40,7 +41,7 @@ object Blocks {
     }
 
     fun getTNTEntityByType(
-        type: TntType?,
+        block: Block,
         world: World,
         pos: BlockPos,
         igniter: LivingEntity? = null
@@ -51,12 +52,12 @@ object Blocks {
             pos.y.toDouble(), pos.z.toDouble() + 0.5, igniter
         )
 
-         when (type) {
-            TntType.Industrial -> {
-                (tntEntity as TNTAttribute).tntType = TntType.Industrial
-            }
-            else -> {}
+        (block as? TNTAttribute)?.let {
+            (tntEntity as TNTAttribute).tntType = it.tntType
+        }
 
+        (block as? FortuneAttribute)?.let {
+            (tntEntity as FortuneAttribute).fortuneLevel = it.fortuneLevel
         }
 
         return tntEntity
@@ -70,11 +71,9 @@ object Blocks {
 
     private fun registerBlockItem(name: String, block: Block): Item? {
         return Registry.register(
-            Registry.ITEM, Identifier(MOD_ID, name), TntItem(block, FabricItemSettings().group(ItemGroup.MISC) )
+            Registry.ITEM, Identifier(MOD_ID, name), TntItem(block, FabricItemSettings().group(ItemGroup.MISC))
         )
     }
-
-
 
 
 }

@@ -50,10 +50,6 @@ public class ExplosionMixin {
 
 
     @ModifyArg(method = "collectBlocksAndDamageEntities()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"), index = 1)
-//    @ModifyConstant(
-//            method = "collectBlocksAndDamageEntities()V",
-//            constant = @Constant(doubleValue = 7)
-//    )
     private float setNoItemDamage_in_collectBlocksAndDamageEntities(float value) {
         if (this.capturedEntity.get() instanceof ItemEntity) {
             if(entity instanceof TNTAttribute){

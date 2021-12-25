@@ -1,0 +1,41 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tnt:industrial_tnt"
+    },
+    {
+      "item": "minecraft:diamond_pickaxe",
+      "data": {
+        "require": {
+          "Enchantments": [
+            {
+              "id": "minecraft:fortune",
+              "lvl": 1
+            }
+          ]
+        }
+      },
+      "remainder": {
+        "item": "minecraft:diamond_pickaxe",
+        "data": {
+          "$": "$ i1",
+          "some_custom_tag": true,
+          "Damage": "$ i1.Damage + 120"
+        }
+      }
+    }
+  ],
+  "result": {
+    "item": "tnt:industrial_tnt",
+    "data": {
+      "Enchantments": [
+        {
+          "id": "minecraft:fortune",
+          "lvl": 1
+        }
+      ]
+
+    }
+  }
+}
