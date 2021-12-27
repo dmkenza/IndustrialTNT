@@ -46,13 +46,13 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
+//	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
 
-	modApi "com.minelittlepony:kirin:${project.kirin_version}"
-	include "com.minelittlepony:kirin:${project.kirin_version}"
+//	modApi "com.minelittlepony:kirin:${project.kirin_version}"
+//	include "com.minelittlepony:kirin:${project.kirin_version}"
 
-	modApi "de.siphalor:nbtcrafting-1.17:+"
-	include "de.siphalor:nbtcrafting-1.17:+"
+	modApi "de.siphalor:nbtcrafting-1.16:+"
+	include "de.siphalor:nbtcrafting-1.16:+"
 }
 
 processResources {

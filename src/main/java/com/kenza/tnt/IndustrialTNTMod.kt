@@ -2,8 +2,6 @@ package com.kenza.tnt
 
 import com.google.gson.Gson
 import com.kenza.tnt.block.Blocks
-import com.kenza.tnt.utils.openLastWorldOnInit
-import com.minelittlepony.common.event.ScreenInitCallback
 import drawer.ForNbtCompound
 import drawer.readFrom
 import kotlinx.coroutines.*

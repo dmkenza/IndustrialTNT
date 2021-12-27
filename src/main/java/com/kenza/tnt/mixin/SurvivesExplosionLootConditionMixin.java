@@ -18,7 +18,7 @@ public class SurvivesExplosionLootConditionMixin {
     @Inject(method = "test(Lnet/minecraft/loot/context/LootContext;)Z", at = @At("HEAD"), cancellable = true)
     public void test(LootContext lootContext, CallbackInfoReturnable<Boolean> cir) {
         try{
-            Entity thisEntity = lootContext.requireParameter(LootContextParameters.THIS_ENTITY);
+            Entity thisEntity = lootContext.get(LootContextParameters.THIS_ENTITY);
 
             if(thisEntity instanceof TNTAttribute){
                 if(((TNTAttribute) thisEntity).getTntType() == TntType.Industrial){

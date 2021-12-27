@@ -39,7 +39,7 @@ class TntItem(block: Block?, settings: Settings?) : BlockItem(block, settings) {
 
     override fun place(context: ItemPlacementContext, state: BlockState): Boolean {
 
-        context.stack.nbt?.let { nbt ->
+        context.stack.tag?.let { nbt ->
 //            nbt[""]
             val level = nbt.getFortuneEnchantment()
             (state.block as? FortuneAttribute)?.fortuneLevel = level
