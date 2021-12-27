@@ -51,8 +51,8 @@ dependencies {
 //	modApi "com.minelittlepony:kirin:${project.kirin_version}"
 //	include "com.minelittlepony:kirin:${project.kirin_version}"
 
-	modApi "de.siphalor:nbtcrafting-1.16:+"
-	include "de.siphalor:nbtcrafting-1.16:+"
+	modApi "de.siphalor:nbtcrafting-1.17:+"
+	include "de.siphalor:nbtcrafting-1.17:+"
 }
 
 processResources {
