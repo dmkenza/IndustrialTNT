@@ -36,7 +36,12 @@ public class ExplosionMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;getDroppedStacks(Lnet/minecraft/loot/context/LootContext$Builder;)Ljava/util/List;"),
             index = 0)
     private LootContext.Builder replaceLootContext(LootContext.Builder builder) {
-        return explosionExt.replaceLootContext(builder, entity, power);
+        if(entity == null){
+            return builder;
+        }else{
+            return explosionExt.replaceLootContext(builder, entity, power);
+        }
+
     }
 
 
