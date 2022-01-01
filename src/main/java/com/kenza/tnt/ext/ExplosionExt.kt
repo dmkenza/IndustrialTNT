@@ -24,21 +24,27 @@ class ExplosionExtImpl() {
         power: Float
     ): LootContext.Builder {
 
-        (entity as? TNTAttribute)?.let {
+        try {
+            (entity as? TNTAttribute)?.let {
 
-            when (entity.tntType) {
-                Default -> {
+                when (entity.tntType) {
+                    Default -> {
 
-                }
-                Industrial -> {
-                    (entity as? FortuneAttribute)?.let {
-//                        builder.parameter(LootContextParameters.EXPLOSION_RADIUS, power)
-                        builder.parameter(LootContextParameters.TOOL, getDiamondPickaxeItemStack(it.fortuneLevel))
                     }
+                    Industrial -> {
+                        (entity as? FortuneAttribute)?.let {
+//                        builder.parameter(LootContextParameters.EXPLOSION_RADIUS, power)
+                            builder.parameter(LootContextParameters.TOOL, getDiamondPickaxeItemStack(it.fortuneLevel))
+                        }
 
+                    }
                 }
             }
+        }catch (e: Exception){
+
         }
+
+
         return builder
     }
 
