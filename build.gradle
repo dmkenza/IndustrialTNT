@@ -48,8 +48,8 @@ dependencies {
 
 	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
 
-	modApi "com.minelittlepony:kirin:${project.kirin_version}"
-	include "com.minelittlepony:kirin:${project.kirin_version}"
+	modImplementation "com.minelittlepony:kirin:${project.kirin_version}"
+//	include "com.minelittlepony:kirin:${project.kirin_version}"
 
 	modApi "de.siphalor:nbtcrafting-1.17:+"
 	include "de.siphalor:nbtcrafting-1.17:+"

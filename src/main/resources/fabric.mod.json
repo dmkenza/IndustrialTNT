@@ -8,6 +8,7 @@
     "DmitryKenza"
   ],
   "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/industrialtnt",
     "sources": "https://github.com/dmkenza/IndustrialTNT",
     "issues": "https://github.com/dmkenza/IndustrialTNT/issues"
   },
@@ -28,7 +29,7 @@
     "modmenu": []
   },
   "mixins": [
-    "modid.mixins.json"
+    "industrialtnt.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.12.0",
