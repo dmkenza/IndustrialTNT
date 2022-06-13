@@ -28,8 +28,6 @@ import net.minecraft.world.World
 
 object Blocks {
 
-
-
     @JvmStatic
     val INDUSTRIAL_TNT_BLOCK = registerBlock(
         INDUSTRIAL_TNT_BLOCk_ID, TntBlock(
